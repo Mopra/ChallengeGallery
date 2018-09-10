@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<!--
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons|Nanum+Gothic|Oswald" rel="stylesheet">-->
+<link type="text/css" rel="stylesheet" href="style.css"  media="screen,projection"/>
+
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+<script>
+var folder = "images/";
+
+$.ajax({
+    url : folder,
+    success: function (data) {
+        $(data).find("a").attr("href", function (i, val) {
+            if( val.match(/\.(jpe?g|png|gif)$/) ) {
+                $("body").append( "<img src='"+ folder + val +"'>" );
+            }
+        });
+    }
+});
+</script>
+
+
+</head>
+
+<header>
+
+</header>
+
+<main>
+    <div></div>
+    <div id="grid">
+
+    </div>
+    <div></div>
+</main>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+  <script
+    src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+    integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+    crossorigin="anonymous"></script>
+</body>
+</html>
